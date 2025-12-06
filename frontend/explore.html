@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroMAG - Explore Articles</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/pages-style.css"> 
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div>
+            <a href="newsfeed.html">📰 RetroMAG HOME</a>
+        </div>
+        <div>
+            <a href="explore.html">📁 EXPLORE ARTICLES</a> 
+            <a href="profile.html">👤 PROFILE</a>
+            <a href="index.html" class="retro-button">LOG OUT</a>
+        </div>
+    </nav>
+
+    <div id="main-content" class="web1-box">
+        
+        <header>
+            <h1>EXPLORE - THE CORKBOARD</h1>
+            <p>Find the coolest retro content pinned right here. New topics daily!</p>
+        </header>
+        
+        <main id="content-grid">
+            
+            <section class="magazine-cutout top-picks">
+                <h2>TOP PICKS</h2>
+                <div class="item">
+                    <img src="assets/images/retro_game.jpg" alt="Retro Game" class="retro-img">
+                    <h3>GAME OF THE YEAR: PIXEL FURY</h3>
+                    <p>Why this 8-bit title redefined the genre.</p>
+                </div>
+            </section>
+
+            <section class="magazine-cutout gossip-section">
+                <h2>GOSSIP SCANDAL</h2>
+                <div class="item">
+                    <img src="assets/images/celeb_retro.jpg" alt="80s Celeb" class="sepia-img">
+                    <h3>Madonna seen dating a grunge rocker!</h3>
+                    <p>Full story behind the iconic clash.</p>
+                </div>
+            </section>
+
+            <section class="magazine-cutout local-board">
+                <h2>📍 LOCAL BOARD: MEETUPS NEAR YOU</h2>
+                <div id="local-post-area">
+                    <div class="ad-poster">
+                        <h3>HACKATHON REMINDER!</h3>
+                        <small>Location: Bucharest Cyber Cafe. Time: Saturday 11:00.</small>
+                    </div>
+                </div>
+                <button class="add-poster-btn retro-button">+ ADD POSTER</button>
+            </section>
+
+            <section class="magazine-cutout music-charts">
+                <h2>MUSIC CHARTS: TOP 5</h2>
+                <ol>
+                    <li>THE CURE - FRIDAY I'M IN LOVE</li>
+                    <li>DEPECHE MODE - ENJOY THE SILENCE</li>
+                    <li>BLUR - SONG 2</li>
+                </ol>
+            </section>
+
+        </main>
+    </div>
+    
+    <div id="donna-bubble-head">
+        <img src="assets/images/donna_head.png" alt="Chatbot DONNA" id="donna-png-img">
+    </div>
+
+    <div id="chatbot-window" class="hidden">
+        <div id="chatbot-header">Chatbot AI <button id="close-chatbot">X</button></div>
+        <div id="chatbot-messages"></div>
+        <input type="text" id="chatbot-input" placeholder="Ask here...">
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroMAG - Welcome Issue</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/welcome-style.css">
+</head>
+<body>
+
+    <div class="page-frame">
+        <div class="mag-page">
+
+            <!-- decorative layers (pseudo-elements handled in CSS) -->
+            <div class="mag-inner">
+
+                <!-- BARCODE FAKE -->
+                <div class="barcode-box">
+                    <div class="barcode-stripes"></div>
+                    <div class="barcode-code">9 771234 567008</div>
+                </div>
+
+                <header class="mag-header">
+                    <div class="logo-area">
+                        <img src="assets/images/titles/retromag_title.png" 
+                             alt="RetroMAG Title" 
+                             id="main-logo-image">
+                    </div>
+
+                    <div class="tagline-area">
+                        <p class="tagline">
+                            Your digital magazine from the past,<br>
+                            <span>powered by the tech of the future!</span>
+                        </p>
+                        <p class="issue-label">WELCOME ISSUE • WINTER EDITION</p>
+                        <p class="date-label">
+                            Date: <span id="current-date"></span>
+                        </p>
+                    </div>
+                </header>
+
+                <!-- STRIP CU TRENDING TOPICS SCURTE + BUTON -->
+                <section class="trending-strip">
+                    <div class="strip-title">Trending Topics:</div>
+                    <ul class="strip-list">
+                        <li>#cyberRacer3000</li>
+                        <li>#retroGaming</li>
+                        <li>#dialUpMemories</li>
+                        <li>#DONNAchatbot</li>
+                    </ul>
+                    
+                </section>
+
+                <main>
+                    <section id="trending-section">
+                        <h2 class="vintage-head">🔥 THE HOT STUFF 🔥</h2>
+                        
+                        <div class="trending-post">
+                            <h3>👾 Game of the Week: Cyber Racer 3000</h3>
+                            <p>A deep dive into the latest 16-bit hit that brought us back to Genesis. 
+                                <span class="lock-label">(Authentication required to read)</span>
+                            </p>
+                        </div>
+                        
+                        <div class="trending-post">
+                            <h3>💾 DONNA Chatbot is trending!</h3>
+                            <p>Discover the AI that can summarize entire web pages for you. 
+                                <span class="lock-label">(Authenticate to interact)</span>
+                            </p>
+                        </div>
+                    </section>
+
+                    <div class="navigation-area">
+                        <a href="auth.html" id="auth-button" class="retro-button">
+                            AUTHENTICATION / START BROWSING →
+                        </a>
+                        <p class="small-note">Log in to unlock full articles, comments and your personal retro feed.</p>
+                    </div>
+                </main>
+
+                <footer class="mag-footer">
+                    <p class="footer-left">RetroMAG © 1999–2025 • ISSUE #00</p>
+                    <p class="footer-right">
+                        Cover price: <span class="price-tag">€4.99</span> • “Press START to enter the timeline.”
+                    </p>
+                </footer>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+
+    <!-- Mic script pentru data curentă în header -->
+    <script>
+        (function () {
+            const dateSpan = document.getElementById('current-date');
+            if (!dateSpan) return;
+
+            const now = new Date();
+            const options = { day: '2-digit', month: 'short', year: 'numeric' };
+            dateSpan.textContent = now.toLocaleDateString('en-GB', options).replace(',', '');
+        })();
+    </script>
+</body>
+</html>

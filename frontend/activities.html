@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroMAG - Local Activities</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/pages-style.css"> 
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div>
+            <a href="newsfeed.html">📰 RetroMAG HOME</a>
+        </div>
+        <div>
+            <a href="explore.html">📁 EXPLORE ARTICLES</a> 
+            <a href="activities.html">📍 LOCAL BOARD</a> 
+            <a href="profile.html">👤 PROFILE</a>
+            <a href="index.html" class="retro-button">LOG OUT</a>
+        </div>
+    </nav>
+
+    <div id="main-content" class="web1-box">
+        
+        <header>
+            <h1>📍 LOCAL BOARD - Activities</h1>
+            <p>Events pinned in your current area. (Using simulated location data)</p>
+        </header>
+        
+        <section id="location-controls" class="web1-box">
+            <h2>Current Location: <span id="current-location">Checking GPS...</span></h2>
+            <button id="update-location-btn" class="retro-button">Check Nearby Events</button>
+            <p class="small-text">Note: Events displayed are within 10km radius.</p>
+        </section>
+
+        <main id="corkboard-grid">
+            </main>
+
+    </div>
+    
+    <div id="donna-bubble-head">
+        <img src="assets/images/donna_head.png" alt="Chatbot DONNA" id="donna-png-img">
+    </div>
+    <div id="chatbot-window" class="hidden">...</div>
+    <script src="assets/script.js"></script>
+</body>
+</html>

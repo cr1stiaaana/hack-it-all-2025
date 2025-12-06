@@ -1,0 +1,89 @@
+<!-- ...existing code... -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroMAG • Login</title>
+
+    <link rel="stylesheet" href="assets/auth-style.css">
+</head>
+<body>
+
+    <div class="auth-wrapper">
+        
+        <div class="auth-box">
+
+            <img src="assets/images/titles/login_title.png" 
+                alt="Login Title" 
+                class="auth-title-img">
+            <form id="login-form">
+
+                <!-- put the form fields on a crumpled note image -->
+                <div class="noteit">
+                    <div class="field">
+                        <label for="username">USERNAME</label>
+                        <input type="text" id="username" autocomplete="username" required value="demo_user">
+                    </div>
+
+                    <div class="field">
+                        <label for="password">PASSWORD</label>
+                        <input type="password" id="password" autocomplete="current-password" required value="retro123">
+                    </div>
+
+                    <div class="options">
+                        <label class="show-pass">
+                            <input type="checkbox" id="toggle-password">
+                            Show Password
+                        </label>
+
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="login-btn">Log In</button>
+                </div>
+
+            </form>
+
+            <p class="no-account">
+                No account? <a href="#">Subscribe now!</a>
+            </p>
+
+            <p class="test-credentials" style="margin-top:10px; font-size:0.9rem; color:#333;">
+                Test credentials — username: <strong>demo_user</strong> | password: <strong>retro123</strong>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- JS: Show/Hide password + simple mock validation for testing -->
+    <script>
+        const toggle = document.getElementById("toggle-password");
+        const pwd = document.getElementById("password");
+        const form = document.getElementById("login-form");
+
+        toggle.addEventListener("change", () => {
+            pwd.type = toggle.checked ? "text" : "password";
+        });
+
+        // simple client-side mock login for testing only
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const u = document.getElementById("username").value.trim();
+            const p = document.getElementById("password").value;
+            const MOCK_USER = "demo_user";
+            const MOCK_PASS = "retro123";
+
+            if (u === MOCK_USER && p === MOCK_PASS) {
+                // store mock auth flag and redirect to profile/home
+                try { localStorage.setItem('rm_mock_auth', JSON.stringify({user: u, ts: Date.now()})); } catch(e){}
+                alert("Login successful — redirecting to member area.");
+                window.location.href = "profile.html";
+            } else {
+                alert("Invalid credentials — try the test credentials shown below the form.");
+            }
+        });
+    </script>
+
+</body>
+</html>
