@@ -1,0 +1,126 @@
+/* Stil pentru Fereastra Chatbot-ului (Adaugă la explore-style.css) */
+
+/* 1. STIL NOU: BUBBLE HEAD DONNA (PNG Plutitor Stânga Jos) */
+
+#donna-bubble-head {
+    /* Poziționare fixă în colțul din STÂNGA JOS */
+    position: fixed;
+    bottom: 20px; /* Aliniază Bubble Head-ul chiar pe margine */
+    left: 20px; 
+    
+    /* Păstrează doar dimensiunile necesare pentru imagine */
+    width: 150px;  
+    height: 105px; 
+    
+    /* Fără fundal sau chenar, lăsăm PNG-ul să arate retro */
+    background: none; 
+    border: none;     
+    border-radius: 0; 
+
+    cursor: pointer;
+    z-index: 102; /* Mai mare decât fereastra de chat, pentru a fi deasupra */
+    
+    /* Animație simplă la hover */
+    transition: transform 0.2s;
+    display: flex; /* Centrarea imaginii interne */
+    justify-content: center;
+    align-items: center;
+}
+
+#donna-bubble-head:hover {
+    transform: scale(1.05) rotate(-2deg); /* Efect subtil de zburare */
+}
+
+#donna-png-img {
+    /* Asigură-te că imaginea umple containerul */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
+    /* Adaugă un efect vizual retro direct imaginii PNG */
+    box-shadow: 4px 4px 0px #ff00ff; /* Umbră Magenta/Kitch */
+    border-radius: 50%; /* Dacă imaginea ta e rotundă, ajută la efect */
+}
+
+
+/* 2. AJUSTARE: Fereastra de Chat (#chatbot-window) */
+
+#chatbot-window {
+    position: fixed;
+    /* Mută fereastra de chat deasupra logo-ului plutitor */
+    bottom: 120px; /* 20px jos + 80px (inaltime logo) + 20px spațiu */
+    
+    /* Stânga jos */
+    left: 20px;
+    
+    width: 300px;
+    height: 400px;
+    background-color: #c0c0c0; /* Gri Win95 */
+    /* Efect 3D Bevel/Emboss pe fereastră */
+    border-style: solid;
+    border-width: 3px;
+    border-color: #f6f6f6 #808080 #808080 #f6f6f6; 
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    z-index: 101; /* Fereastra trebuie să fie sub logo (102) */
+}
+
+/* Clasa pentru a ascunde fereastra (folosită în JS) */
+.hidden {
+    display: none !important;
+}
+
+#chatbot-header {
+    background-color: #00008b; /* Bara de titlu Albastru Marin */
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move; /* Simulează o fereastră mobilă (deși nu e) */
+}
+
+#close-chatbot {
+    background: #c0c0c0;
+    color: #000;
+    border: 2px solid #000;
+    padding: 2px 5px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+#chatbot-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto; /* Permite scroll */
+    background-color: #f6f6f6; /* Fundalul zonei de mesaje */
+}
+
+.chat-message {
+    margin-bottom: 8px;
+    padding: 5px;
+    border-radius: 3px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #ddeeff; /* Bule de chat user */
+    align-self: flex-end;
+    margin-left: auto;
+    text-align: right;
+}
+
+.donna-message {
+    background-color: #ffffcc; /* Bule de chat DONNA - Galben pal */
+    border-left: 3px solid #00008b;
+}
+
+#chatbot-input {
+    padding: 10px;
+    /* Stilul Input (ca o casetă de text încastrată) */
+    border-style: solid;
+    border-width: 2px;
+    border-color: #808080 #f6f6f6 #f6f6f6 #808080;
+}

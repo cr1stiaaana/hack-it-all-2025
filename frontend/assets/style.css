@@ -1,0 +1,126 @@
+/* ============================================================
+   GLOBAL STYLE – MINIMAL, ONLY PAGE FRAME + BACKGROUND + BARCODE
+   This file acts as the base "magazine paper" layout for ALL pages
+   ============================================================ */
+
+/* Basic reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------ GLOBAL PAGE BACKGROUND ------------------ */
+
+body {
+    min-height: 100vh;
+
+    /* Dark retro-print pattern like on the welcome page */
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #1b1b3a,
+            #1b1b3a 8px,
+            #22224a 8px,
+            #22224a 16px
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Verdana", "Tahoma", sans-serif;
+    color: #000;
+}
+
+/* -------------- PAGE FRAME (CENTERS THE MAIN PAGE) ------------ */
+
+.page-frame {
+    width: 100%;
+    padding: 32px 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------ MAGAZINE-LIKE MAIN PAGE ------------------ */
+
+.mag-page {
+    width: 100%;
+    max-width: 960px;   /* applies to ALL pages */
+    background: #ecd2bb;
+
+    border: 6px double #000;
+    box-shadow:
+        0 20px 0 #000,
+        0 24px 40px rgba(0, 0, 0, 0.7);
+
+    padding: 24px 28px 24px;
+    position: relative;
+}
+
+/* Watermark text like a magazine signature */
+.mag-page::before {
+    content: "RETROMAG";
+    position: absolute;
+    top: 8px;
+    right: 18px;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    color: rgba(0, 0, 0, 0.20);
+}
+
+/* ------------------------ BARCODE --------------------------- */
+
+.barcode-box {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+
+    width: 90px;
+    padding: 4px 6px 2px;
+
+    background: #fff;
+    border: 1px solid #000;
+    box-shadow: 2px 2px 0 #000;
+
+    text-align: center;
+    z-index: 5;
+}
+
+.barcode-stripes {
+    height: 42px;
+    background-image: repeating-linear-gradient(
+        to right,
+        #000 0px,
+        #000 2px,
+        transparent 2px,
+        transparent 4px,
+        #000 4px,
+        #000 5px,
+        transparent 5px,
+        transparent 7px
+    );
+}
+
+.barcode-code {
+    margin-top: 2px;
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+}
+
+/* ------------------- RESPONSIVE FIXES ------------------- */
+
+@media (max-width: 720px) {
+    .mag-page {
+        padding: 18px 16px;
+    }
+
+    .barcode-box {
+        bottom: 10px;
+        left: 10px;
+    }
+}

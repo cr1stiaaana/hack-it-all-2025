@@ -1,0 +1,332 @@
+/* ===========================================
+   RetroMAG – Welcome Issue page styling
+   =========================================== */
+
+/* Make the magazine page taller (more long than wide) */
+.mag-page {
+    min-height: 1100px; /* adjust higher if you want even more height */
+}
+
+/* Inner wrapper for spacing */
+.mag-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 22px 24px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* children align to the LEFT */
+    gap: 22px; /* space between header / strip / main / footer */
+    position: relative;
+}
+
+/* ---------- HEADER ---------- */
+
+.mag-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    border-bottom: 3px solid #000;
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+}
+
+.logo-area {
+    margin-bottom: 6px;
+}
+
+#main-logo-image {
+    max-width: 420px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.tagline-area {
+    margin-top: 4px;
+}
+
+.tagline {
+    margin: 0;
+    font-family: Impact, "Anton", "Arial Black", system-ui, sans-serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    line-height: 1.3;
+    color: #111;
+}
+
+.tagline span {
+    color: #e000ff;
+}
+
+.issue-label {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #555;
+}
+
+.date-label {
+    margin-top: 3px;
+    font-size: 0.8rem;
+    font-family: "Trebuchet MS", "Verdana", system-ui, sans-serif;
+}
+
+/* ---------- TRENDING STRIP (narrow, left) ---------- */
+.trending-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+
+    /* Match Hot Stuff width */
+    width: 65%;
+    max-width: 520px;
+    margin-left: 0;
+
+    padding: 10px 14px;
+    border: 2px solid #000;
+    border-radius: 4px;
+
+    background: linear-gradient(90deg, #ffe600 0%, #ff80ff 50%, #00ffff 100%);
+    box-shadow: 3px 3px 0 #000;
+}
+
+.strip-title {
+    font-family: Impact, "Arial Black", system-ui, sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: #000;
+    color: #00ffff;
+    padding: 3px 7px;
+    white-space: nowrap;
+}
+
+.strip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.strip-list li {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3px 7px;
+    border-radius: 2px;
+    border: 1px solid #000;
+}
+
+/* (button was removed from strip, so no .strip-auth-button needed) */
+
+
+/* ---------- MAIN: vertical layout, same left column ---------- */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* cards follow the same left column */
+    gap: 24px; /* vertical spacing between cards */
+    margin-top: 6px;
+}
+
+/* Shared card look for HOT SHEET + AUTH sections */
+#trending-section,
+.navigation-area {
+    background: linear-gradient(180deg, #fff7eb 0%, #f6e6d4 100%);
+    border: 3px double #000;
+    padding: 16px 18px;
+    box-shadow:
+        0 8px 0 #000,
+        6px 10px 24px rgba(0,0,0,0.45);
+    border-radius: 4px;
+
+    align-self: flex-start;
+    width: 65%;         /* same column width as trending-strip */
+    max-width: 520px;
+}
+
+/* ---------- HOT STUFF (card directly under trending strip) ---------- */
+
+#trending-section {
+    padding-top: 18px;
+}
+
+.vintage-head {
+    margin: 0 0 16px 0;
+    font-family: Impact, "Anton", "Arial Black", system-ui, sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #00008b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-shadow:
+        -2px -2px 0 #ff00ff,
+        2px 2px 0 #ff00ff,
+        0 0 6px #00ffff;
+}
+
+.trending-post {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    background: #fff;
+    border: 2px dashed #00008b;
+}
+
+.trending-post:last-child {
+    margin-bottom: 2px;
+}
+
+.trending-post h3 {
+    margin: 0 0 4px 0;
+    font-weight: bold;
+    font-family: "Trebuchet MS", "Verdana", system-ui, sans-serif;
+    color: #ff00ff;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.trending-post p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.lock-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: bold;
+    color: #c00000;
+}
+
+/* ---------- AUTH / CTA card (bottom card, same column) ---------- */
+
+.navigation-area {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.retro-button,
+#auth-button {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 12px 22px;
+    background-color: #00ffff;
+    color: #00008b;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: Impact, "Anton", "Arial Black", system-ui, sans-serif;
+    letter-spacing: 0.08em;
+
+    border-width: 4px;
+    border-style: solid;
+    border-color: #f6f6f6 #00008b #00008b #f6f6f6;
+    box-shadow: 4px 4px 0 #000;
+    cursor: pointer;
+    transition: transform 0.09s ease, box-shadow 0.09s ease, background-color 0.12s ease;
+}
+
+.retro-button:hover,
+#auth-button:hover {
+    background-color: #ff00ff;
+    color: #ffffff;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #000;
+}
+
+.retro-button:active,
+#auth-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+}
+
+.small-note {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.4;
+}
+
+/* ---------- FOOTER ---------- */
+
+.mag-footer {
+    border-top: 3px solid #000;
+    margin-top: 24px;
+    padding-top: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.footer-left,
+.footer-right {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.price-tag {
+    background: #000;
+    color: #ffe600;
+    padding: 2px 6px;
+    border-radius: 2px;
+}
+
+/* ---------- BARCODE tweak ---------- */
+
+.barcode-box {
+    position: absolute;
+    bottom: 16px;
+    left: 18px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+    .mag-inner {
+        padding: 18px 16px 22px;
+        gap: 18px;
+        align-items: stretch; /* full width on small screens */
+    }
+
+    .trending-strip,
+    #trending-section,
+    .navigation-area {
+        width: 100%;
+        max-width: none;
+    }
+
+    .mag-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-right {
+        white-space: normal;
+    }
+}
+
+@media (max-width: 600px) {
+    .trending-strip {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mag-inner {
+        padding: 14px 12px 20px;
+    }
+}
